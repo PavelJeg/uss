@@ -12,42 +12,56 @@ namespace uss
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            Console.SetWindowSize( 80, 25 );
 
-            Point p2 = new Point(4, 5, '#');
-            //p2.x = 4;
-            //p2.y = 5;
-            //p2.sym = '#';
+            //Отрисовка рамок
+            HorizantalLine upLine = new HorizantalLine( 0, 78, 0, '+' );
+            HorizantalLine downLine = new HorizantalLine( 0, 78, 24, '+' );
+            VerticalLine leftLine = new VerticalLine( 0, 24, 0, '+' );
+            VerticalLine rightLine = new VerticalLine( 0, 24, 78, '+' );
+            upLine.Drow();
+            downLine.Drow();
+            leftLine.Drow();
+            rightLine.Drow();
 
-            p2.Draw();
 
-            //List<int> numList= new List<int>();
-            //numList.Add(0);
-            //numList.Add(1);
-            //numList.Add(2);
 
-            //int x = numList[ 0 ];
-            //int y = numList[ 1 ];
-            //int z = numList[ 2 ];
+            //Отрисовка точек 
+            //Point p1 = new Point(1, 3, '*');
+            //p1.Draw();
 
-            //foreach(int i in numList )
-            //{
-            //    Console.WriteLine( i );
-            //}
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake( p, 4, Direction.RIGHT );
+            snake.Drow();
+            snake.Move();
+            Thread.Sleep(300);
 
-            //numList.RemoveAt( 0 );
+            while(true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey( key.Key);
+                }
+            }    Thread.Sleep( 100 );
+                 snake.Move();
+          
 
-            //List<Point> plist = new List<Point>();
-            //plist.Add(p1);
-
+            
+            
+            
+            
+            
+            
             HorizantalLine line = new HorizantalLine(5, 10, 8, '+');
             line.Drow();
 
 
 
+            
+            
             Console.ReadLine();
         }
-    
+
     }
 }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace uss
 {
-    class HorizantalLine
+    class HorizantalLine : Figure
     {
-        List<Point> pList;
+        //List<Point> pList;
 
         public HorizantalLine(int xLeft, int xRight, int y, char sym)
         {
@@ -29,12 +29,12 @@ namespace uss
             //pList.Add(p3);
         }
                          
-        public void Drow()
-        {
-            foreach (Point p in pList)
-            {
-               p.Draw();
-            }
-        }
+        //public void Drow()
+        //{
+        //    foreach (Point p in pList)
+        //    {
+        //       p.Draw();
+        //    }
+        //}
     } 
 }

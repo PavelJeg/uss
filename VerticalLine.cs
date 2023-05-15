@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace uss
 {
-    class VerticalLine
+    class VerticalLine : Figure
     {
-        List<Point> pList;
+        //List<Point> pList;
 
         public VerticalLine(int yUp, int yDown, int x, char sym )
         {
@@ -19,6 +19,15 @@ namespace uss
                 pList.Add( p ) ;
             }
         }
+
+
+        //public void Drow()
+        //{
+        //    foreach(Point p in pList)
+        //    {
+        //        p.Draw();
+        //    }
+        //}
     }
 
 }
